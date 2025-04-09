@@ -1,0 +1,551 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Premium Wireless Headphones",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 349.99,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "15 x 10 x 5 cm",
+        "Weight": "350g",
+        "Material": "Premium Grade Materials",
+        "Warranty": "2 Years",
+        "Battery Life": "24 Hours"
+      },
+      "reviews": [
+        {
+          "id": "review-1-1",
+          "userName": "Sarah Johnson",
+          "rating": 5,
+          "comment": "Absolutely love this product! The quality is outstanding.",
+          "date": "2023-10-15T14:30:00Z"
+        },
+        {
+          "id": "review-1-2",
+          "userName": "Michael Chen",
+          "rating": 4,
+          "comment": "Great value for money. Would definitely recommend.",
+          "date": "2023-09-22T09:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Smart Watch Series X",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 249.99,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "4 x 4 x 1 cm",
+        "Weight": "50g",
+        "Material": "Aluminum Case",
+        "Warranty": "1 Year",
+        "Battery Life": "48 Hours"
+      },
+      "reviews": [
+        {
+          "id": "review-2-1",
+          "userName": "Emily Davis",
+          "rating": 5,
+          "comment": "Exceeded my expectations. Very satisfied with the purchase.",
+          "date": "2023-11-05T16:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Professional Camera Kit",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 1299.99,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=500&h=500&fit=crop"
+      ],
+      "category": "Photography",
+      "specifications": {
+        "Dimensions": "15 x 12 x 10 cm",
+        "Weight": "1.2kg",
+        "Material": "Magnesium Alloy",
+        "Warranty": "3 Years",
+        "Sensor Size": "Full Frame"
+      },
+      "reviews": [
+        {
+          "id": "review-3-1",
+          "userName": "David Wilson",
+          "rating": 5,
+          "comment": "Perfect for my needs. Will buy again.",
+          "date": "2023-10-30T11:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Minimalist Leather Backpack",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 89.99,
+      "images": [
+        "https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?w=500&h=500&fit=crop"
+      ],
+      "category": "Fashion",
+      "specifications": {
+        "Dimensions": "30 x 45 x 15 cm",
+        "Weight": "800g",
+        "Material": "Genuine Leather",
+        "Warranty": "1 Year",
+        "Capacity": "20L"
+      },
+      "reviews": [
+        {
+          "id": "review-4-1",
+          "userName": "Lisa Anderson",
+          "rating": 4,
+          "comment": "Excellent product and fast shipping.",
+          "date": "2023-11-12T13:10:00Z"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Eco-Friendly Water Bottle",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 24.99,
+      "images": [
+        "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1587500154541-1cafd74f0efc?w=500&h=500&fit=crop"
+      ],
+      "category": "Lifestyle",
+      "specifications": {
+        "Dimensions": "8 x 8 x 22 cm",
+        "Weight": "300g",
+        "Material": "Stainless Steel",
+        "Warranty": "Lifetime",
+        "Capacity": "750ml"
+      },
+      "reviews": []
+    },
+    {
+      "id": 6,
+      "title": "Wireless Gaming Mouse",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 79.99,
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "12 x 7 x 4 cm",
+        "Weight": "120g",
+        "Material": "Plastic",
+        "Warranty": "2 Years",
+        "DPI": "16000"
+      },
+      "reviews": []
+    },
+    {
+      "id": 7,
+      "title": "Portable Power Bank",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 49.99,
+      "images": [
+        "https://images.unsplash.com/photo-1558458878-36802fc5f7f5?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "10 x 6 x 2 cm",
+        "Weight": "250g",
+        "Material": "Aluminum",
+        "Warranty": "1 Year",
+        "Capacity": "20000mAh"
+      },
+      "reviews": []
+    },
+    {
+      "id": 8,
+      "title": "Smart Home Speaker",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 129.99,
+      "images": [
+        "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "15 x 15 x 10 cm",
+        "Weight": "1.1kg",
+        "Material": "Fabric and Plastic",
+        "Warranty": "1 Year",
+        "Connectivity": "Wi-Fi/Bluetooth"
+      },
+      "reviews": []
+    },
+    {
+      "id": 9,
+      "title": "Fitness Tracking Band",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 59.99,
+      "images": [
+        "https://images.unsplash.com/photo-1557935728-e6d1684e0944?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "Adjustable",
+        "Weight": "30g",
+        "Material": "Silicone",
+        "Warranty": "1 Year",
+        "Battery Life": "7 Days"
+      },
+      "reviews": []
+    },
+    {
+      "id": 10,
+      "title": "Noise-Canceling Earbuds",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 179.99,
+      "images": [
+        "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1598331668826-20cecc596b86?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "Case: 6 x 3 x 2 cm",
+        "Weight": "50g (with case)",
+        "Material": "Plastic",
+        "Warranty": "1 Year",
+        "Battery Life": "6 Hours"
+      },
+      "reviews": []
+    },
+    {
+      "id": 11,
+      "title": "Ultra-Slim Laptop Stand",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 39.99,
+      "images": [
+        "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1625757870391-851eb81f8bbe?w=500&h=500&fit=crop"
+      ],
+      "category": "Accessories",
+      "specifications": {
+        "Dimensions": "30 x 20 x 5 cm",
+        "Weight": "400g",
+        "Material": "Aluminum",
+        "Warranty": "1 Year",
+        "Max Load": "5kg"
+      },
+      "reviews": []
+    },
+    {
+      "id": 12,
+      "title": "Digital Drawing Tablet",
+      "description": "Experience premium quality and exceptional performance with our latest product. Designed for those who demand the best.",
+      "price": 199.99,
+      "images": [
+        "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=500&h=500&fit=crop"
+      ],
+      "category": "Electronics",
+      "specifications": {
+        "Dimensions": "35 x 22 x 1 cm",
+        "Weight": "600g",
+        "Material": "Plastic",
+        "Warranty": "2 Years",
+        "Pressure Levels": "4096"
+      },
+      "reviews": []
+    },
+    {
+      "id": 13,
+      "title": "Organic Cotton Throw Blanket",
+      "description": "Ultra-soft 100% organic cotton blanket for cozy nights. Machine washable and hypoallergenic.",
+      "price": 65.99,
+      "images": [
+        "https://images.unsplash.com/photo-1602722053028-a0a79850f7ca?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&h=500&fit=crop"
+      ],
+      "category": "Home",
+      "specifications": {
+        "Dimensions": "150 x 200 cm",
+        "Weight": "1.2 kg",
+        "Material": "Organic Cotton",
+        "Color Options": "6 colors available",
+        "Care": "Machine wash cold"
+      },
+      "reviews": [
+        {
+          "id": "review-13-1",
+          "userName": "Emma Thompson",
+          "rating": 5,
+          "comment": "Incredibly soft and perfect weight for year-round use. Washes well!",
+          "date": "2023-11-10T08:45:00Z"
+        },
+        {
+          "id": "review-13-2",
+          "userName": "James Wilson",
+          "rating": 4,
+          "comment": "Great quality but color was slightly darker than pictured.",
+          "date": "2023-10-28T14:20:00Z"
+        },
+        {
+          "id": "review-13-3",
+          "userName": "Sophia Chen",
+          "rating": 5,
+          "comment": "My cats love kneading this blanket. Holds up perfectly!",
+          "date": "2023-09-15T11:30:00Z"
+        },
+        {
+          "id": "review-13-4",
+          "userName": "Michael Brown",
+          "rating": 5,
+          "comment": "Worth every penny - stays soft after multiple washes.",
+          "date": "2023-08-22T16:15:00Z"
+        },
+        {
+          "id": "review-13-5",
+          "userName": "Olivia Martinez",
+          "rating": 4,
+          "comment": "Beautiful texture but could be slightly larger.",
+          "date": "2023-07-30T09:50:00Z"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Cast Iron Skillet Set",
+      "description": "Pre-seasoned 3-piece cast iron set perfect for searing, baking, and frying.",
+      "price": 89.99,
+      "images": [
+        "https://images.unsplash.com/photo-1582515073490-39981397c445?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1519683109079-d5f539e1542f?w=500&h=500&fit=crop"
+      ],
+      "category": "Kitchen",
+      "specifications": {
+        "Set Includes": "8\", 10\", 12\" skillets",
+        "Material": "Cast Iron",
+        "Oven Safe": "Yes (up to 500°F)",
+        "Pre-Seasoned": "Yes",
+        "Handle Type": "Ergonomic"
+      },
+      "reviews": [
+        {
+          "id": "review-14-1",
+          "userName": "Chef Daniel",
+          "rating": 5,
+          "comment": "Professional-grade quality at home cook prices. Perfect heat retention!",
+          "date": "2023-11-05T07:30:00Z"
+        },
+        {
+          "id": "review-14-2",
+          "userName": "Megan K.",
+          "rating": 4,
+          "comment": "Heavier than expected but cooks beautifully.",
+          "date": "2023-10-18T12:45:00Z"
+        },
+        {
+          "id": "review-14-3",
+          "userName": "Raj Patel",
+          "rating": 5,
+          "comment": "Made the best steak of my life with the 12\" skillet!",
+          "date": "2023-09-22T18:20:00Z"
+        },
+        {
+          "id": "review-14-4",
+          "userName": "Lisa Wong",
+          "rating": 5,
+          "comment": "Even heating - no more hot spots in my cooking.",
+          "date": "2023-08-15T10:15:00Z"
+        },
+        {
+          "id": "review-14-5",
+          "userName": "Thomas R.",
+          "rating": 4,
+          "comment": "Takes practice to maintain seasoning but worth it.",
+          "date": "2023-07-08T14:50:00Z"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Yoga Mat Pro",
+      "description": "Eco-friendly 6mm thick mat with alignment markers for perfect poses.",
+      "price": 54.95,
+      "images": [
+        "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1545389336-cf090694435e?w=500&h=500&fit=crop"
+      ],
+      "category": "Sports",
+      "specifications": {
+        "Thickness": "6mm",
+        "Material": "Eco-friendly TPE",
+        "Dimensions": "183 x 61 cm",
+        "Weight": "2.3 kg",
+        "Features": "Non-slip surface, alignment markers"
+      },
+      "reviews": [
+        {
+          "id": "review-15-1",
+          "userName": "YogaTeacherSarah",
+          "rating": 5,
+          "comment": "Best mat I've used in 10 years of teaching - zero slipping!",
+          "date": "2023-11-12T06:20:00Z"
+        },
+        {
+          "id": "review-15-2",
+          "userName": "Mark T.",
+          "rating": 4,
+          "comment": "Great cushioning for my knees during long sessions.",
+          "date": "2023-10-05T09:45:00Z"
+        },
+        {
+          "id": "review-15-3",
+          "userName": "Priya N.",
+          "rating": 5,
+          "comment": "Alignment markers helped improve my form significantly.",
+          "date": "2023-09-18T15:30:00Z"
+        },
+        {
+          "id": "review-15-4",
+          "userName": "David L.",
+          "rating": 5,
+          "comment": "No more sliding around during hot yoga!",
+          "date": "2023-08-22T11:15:00Z"
+        },
+        {
+          "id": "review-15-5",
+          "userName": "Amanda S.",
+          "rating": 4,
+          "comment": "Slight rubber smell at first but faded after a week.",
+          "date": "2023-07-30T13:50:00Z"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Compact Camping Tent",
+      "description": "3-season 2-person tent with waterproof rainfly and lightweight aluminum poles.",
+      "price": 149.99,
+      "images": [
+        "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1537905569824-f89f14cceb68?w=500&h=500&fit=crop"
+      ],
+      "category": "Outdoor",
+      "specifications": {
+        "Capacity": "2-person",
+        "Weight": "2.1 kg",
+        "Seasons": "3-season",
+        "Waterproof": "3000mm rating",
+        "Setup Time": "5 minutes"
+      },
+      "reviews": [
+        {
+          "id": "review-16-1",
+          "userName": "OutdoorGuru",
+          "rating": 5,
+          "comment": "Survived a thunderstorm without a single leak!",
+          "date": "2023-11-08T07:15:00Z"
+        },
+        {
+          "id": "review-16-2",
+          "userName": "HikingFamily",
+          "rating": 4,
+          "comment": "Perfect for backpacking - lightweight but roomy.",
+          "date": "2023-10-20T12:30:00Z"
+        },
+        {
+          "id": "review-16-3",
+          "userName": "TrailRunnerMike",
+          "rating": 5,
+          "comment": "Sets up faster than any tent I've owned.",
+          "date": "2023-09-15T18:45:00Z"
+        },
+        {
+          "id": "review-16-4",
+          "userName": "NatureLover",
+          "rating": 5,
+          "comment": "Ventilation is excellent - no condensation buildup.",
+          "date": "2023-08-10T10:20:00Z"
+        },
+        {
+          "id": "review-16-5",
+          "userName": "CampingNewbie",
+          "rating": 4,
+          "comment": "Took me two tries to master the setup but love it now!",
+          "date": "2023-07-05T14:55:00Z"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "The Creative's Journal",
+      "description": "Premium 200-page dotted journal with thick, bleed-proof paper for artists and writers.",
+      "price": 22.5,
+      "images": [
+        "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1510172951991-856a62a9e395?w=500&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500&h=500&fit=crop"
+      ],
+      "category": "Books",
+      "specifications": {
+        "Pages": "200 dotted",
+        "Paper Weight": "120 gsm",
+        "Cover": "Hardcover",
+        "Size": "A5 (14.8 x 21 cm)",
+        "Features": "Lay-flat binding, ribbon bookmark"
+      },
+      "reviews": [
+        {
+          "id": "review-17-1",
+          "userName": "WriterEmily",
+          "rating": 5,
+          "comment": "Fountain pen ink doesn't bleed through at all!",
+          "date": "2023-11-15T08:25:00Z"
+        },
+        {
+          "id": "review-17-2",
+          "userName": "ArtistJose",
+          "rating": 5,
+          "comment": "Perfect for bullet journaling and light watercolor.",
+          "date": "2023-10-28T13:40:00Z"
+        },
+        {
+          "id": "review-17-3",
+          "userName": "StudentLife",
+          "rating": 4,
+          "comment": "Great quality but slightly heavy for daily carry.",
+          "date": "2023-09-20T17:55:00Z"
+        },
+        {
+          "id": "review-17-4",
+          "userName": "NotebookCollector",
+          "rating": 5,
+          "comment": "The paper texture is ideal for pencil sketching.",
+          "date": "2023-08-12T09:30:00Z"
+        },
+        {
+          "id": "review-17-5",
+          "userName": "GiftGiver",
+          "rating": 5,
+          "comment": "Bought three as gifts - everyone loved them!",
+          "date": "2023-07-07T15:45:00Z"
+        }
+      ]
+    }
+  ]
+}

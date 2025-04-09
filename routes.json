@@ -1,0 +1,4 @@
+{
+  "/products*": "/$1?_page=$2&_limit=12&_embed=reviews",
+  "/products/:id": "/products/:id?_embed=reviews"
+}
