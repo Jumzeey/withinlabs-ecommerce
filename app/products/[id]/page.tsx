@@ -9,18 +9,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AddToCartButton } from '@/app/components/AddToCartButton';
 import { fetchProductById, fetchProducts } from '@/lib/api';
 
+export const dynamicParams = true; // Enable dynamic params for non-generated routes
+
 export async function generateStaticParams() {
   try {
-    // Get first page of products to generate static paths
-    const { products } = await fetchProducts(1, 100); // Increase limit to get more products
+    // Fetch all products (adjust pagination if needed)
+    const { products } = await fetchProducts(1, 100);
+
     return products.map((product) => ({
-      id: product.id,
+      id: product.id.toString(), // Ensure ID is string to match [id] type
     }));
   } catch (error) {
     console.error('Error generating static params:', error);
-    return [];
+    return []; // Return empty array if generation fails
   }
 }
+
+export const dynamic = 'force-static'; // Force static generation where possible
 
 export default async function ProductPage({
   params,
@@ -30,6 +35,7 @@ export default async function ProductPage({
   let product: Product;
 
   try {
+    // Convert ID to string to match API expectations
     product = await fetchProductById(params.id);
     console.log('Product data:', product);
   } catch (error) {
@@ -77,7 +83,7 @@ export default async function ProductPage({
 
           <p className="text-muted-foreground">{product.description}</p>
 
-          <AddToCartButton productId={product.id} />
+          <AddToCartButton productId={product.id.toString()} />
 
           <Tabs defaultValue="specifications" className="mt-8">
             <TabsList>
