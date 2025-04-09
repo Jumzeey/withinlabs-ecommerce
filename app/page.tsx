@@ -14,39 +14,53 @@ interface SearchParams {
   maxPrice?: string;
 }
 
-// ✅ Server Component with async data fetching
-export default async function Home({ searchParams }: { searchParams: SearchParams }) {
-  const page = Number(searchParams.page) || 1;
+export default async function HomePage({
+  searchParams
+}: {
+  searchParams: SearchParams
+}) {
+  // Parse and validate page number
+  const currentPage = Math.max(1, Number(searchParams.page) || 1);
+
+  // Parse filters
+  const filters = {
+    category: searchParams.category,
+    search: searchParams.search,
+    minPrice: searchParams.minPrice ? Number(searchParams.minPrice) : undefined,
+    maxPrice: searchParams.maxPrice ? Number(searchParams.maxPrice) : undefined
+  };
 
   try {
-    const { products, totalPages } = await fetchProducts(page, 12, {
-      category: searchParams.category,
-      search: searchParams.search,
-      minPrice: searchParams.minPrice ? Number(searchParams.minPrice) : undefined,
-      maxPrice: searchParams.maxPrice ? Number(searchParams.maxPrice) : undefined
-    });
+    const { products, totalPages } = await fetchProducts(
+      currentPage,
+      12,
+      filters
+    );
 
     return (
-      <div className="py-8 px-24 space-y-8">
+      <div className="py-8 px-4 md:px-8 lg:px-24 space-y-8">
         <ProductFilters initialValues={searchParams} />
+
         <Suspense fallback={<ProductGridSkeleton />}>
           <ProductGrid products={products} />
+
           {totalPages > 1 && (
             <Pagination
-              currentPage={page}
+              currentPage={currentPage}
               totalPages={totalPages}
             />
           )}
         </Suspense>
-        <Pagination
-          currentPage={page}
-          totalPages={totalPages}
-        />
       </div>
     );
+
   } catch (error) {
     console.error('Error fetching products:', error);
-    return <div className="text-red-500 text-center py-8">Failed to load products</div>;
+    return (
+      <div className="text-red-500 text-center py-8">
+        Failed to load products. Please try again later.
+      </div>
+    );
   }
 }
 

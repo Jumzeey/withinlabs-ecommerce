@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductFilters matches snapshot with empty initial values 1`] = `
+<DocumentFragment>
+  <form
+    aria-label="Product filters"
+    class="space-y-4"
+  >
+    <div
+      class="flex gap-4"
+    >
+      <input
+        class="px-4 py-2 border rounded flex-1"
+        placeholder="Search products..."
+        type="text"
+        value=""
+      />
+      <select
+        class="px-4 py-2 border rounded"
+      >
+        <option
+          value="All"
+        >
+          All Categories
+        </option>
+        <option
+          value="Electronics"
+        >
+          Electronics
+        </option>
+        <option
+          value="Home"
+        >
+          Home
+        </option>
+        <option
+          value="Kitchen"
+        >
+          Kitchen
+        </option>
+        <option
+          value="Sports"
+        >
+          Sports
+        </option>
+        <option
+          value="Outdoor"
+        >
+          Outdoor
+        </option>
+        <option
+          value="Books"
+        >
+          Books
+        </option>
+      </select>
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        type="submit"
+      >
+        Apply Filters
+      </button>
+    </div>
+    <div
+      class="flex gap-4 items-center"
+    >
+      <div
+        class="flex items-center gap-2"
+      >
+        <span>
+          Price:
+        </span>
+        <input
+          class="px-3 py-1 border rounded w-24"
+          placeholder="Min"
+          type="number"
+          value=""
+        />
+        <span>
+          -
+        </span>
+        <input
+          class="px-3 py-1 border rounded w-24"
+          placeholder="Max"
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`ProductFilters matches snapshot with initial values 1`] = `
+<DocumentFragment>
+  <form
+    aria-label="Product filters"
+    class="space-y-4"
+  >
+    <div
+      class="flex gap-4"
+    >
+      <input
+        class="px-4 py-2 border rounded flex-1"
+        placeholder="Search products..."
+        type="text"
+        value="test"
+      />
+      <select
+        class="px-4 py-2 border rounded"
+      >
+        <option
+          value="All"
+        >
+          All Categories
+        </option>
+        <option
+          value="Electronics"
+        >
+          Electronics
+        </option>
+        <option
+          value="Home"
+        >
+          Home
+        </option>
+        <option
+          value="Kitchen"
+        >
+          Kitchen
+        </option>
+        <option
+          value="Sports"
+        >
+          Sports
+        </option>
+        <option
+          value="Outdoor"
+        >
+          Outdoor
+        </option>
+        <option
+          value="Books"
+        >
+          Books
+        </option>
+      </select>
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        type="submit"
+      >
+        Apply Filters
+      </button>
+    </div>
+    <div
+      class="flex gap-4 items-center"
+    >
+      <div
+        class="flex items-center gap-2"
+      >
+        <span>
+          Price:
+        </span>
+        <input
+          class="px-3 py-1 border rounded w-24"
+          placeholder="Min"
+          type="number"
+          value="10"
+        />
+        <span>
+          -
+        </span>
+        <input
+          class="px-3 py-1 border rounded w-24"
+          placeholder="Max"
+          type="number"
+          value="100"
+        />
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

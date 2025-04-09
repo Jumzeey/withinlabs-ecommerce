@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductGrid matches snapshot with empty products 1`] = `
+<DocumentFragment>
+  <div
+    data-animate="{"opacity":1}"
+    data-initial="{"opacity":0}"
+    data-testid="product-grid"
+    data-transition="{"duration":0.5}"
+  />
+</DocumentFragment>
+`;
+
+exports[`ProductGrid matches snapshot with products 1`] = `
+<DocumentFragment>
+  <div
+    data-animate="{"opacity":1}"
+    data-initial="{"opacity":0}"
+    data-testid="product-grid"
+    data-transition="{"duration":0.5}"
+  >
+    <div
+      data-testid="product-card"
+    >
+      Product 1
+    </div>
+    <div
+      data-testid="product-card"
+    >
+      Product 2
+    </div>
+    <div
+      data-testid="product-card"
+    >
+      Product 3
+    </div>
+  </div>
+</DocumentFragment>
+`;

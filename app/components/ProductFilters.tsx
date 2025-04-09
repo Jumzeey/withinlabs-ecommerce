@@ -45,7 +45,7 @@ export function ProductFilters({ initialValues }: ProductFiltersProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" aria-label="Product filters">
       <div className="flex gap-4">
         <input
           type="text"

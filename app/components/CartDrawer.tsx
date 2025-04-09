@@ -75,6 +75,7 @@ export function CartDrawer() {
       {/* Clear Cart Button at the top */}
       <div className="flex justify-end p-4">
         <Button
+          aria-label="Clear cart"
           variant="ghost"
           size="sm"
           className="text-red-500 hover:text-red-600"
@@ -126,6 +127,7 @@ export function CartDrawer() {
                     <Plus className="h-4 w-4" />
                   </Button>
                   <Button
+                    aria-label="Remove item"
                     variant="outline"
                     size="icon"
                     className="h-8 w-8 text-red-500"

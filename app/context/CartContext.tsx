@@ -28,16 +28,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart from localStorage
   useEffect(() => {
-    try {
-      const savedCart = localStorage.getItem(CART_STORAGE_KEY);
-      if (savedCart) {
-        setItems(JSON.parse(savedCart));
+    const loadCart = () => {
+      try {
+        const savedCart = localStorage.getItem(CART_STORAGE_KEY);
+        if (savedCart) {
+          const parsed = JSON.parse(savedCart);
+          if (Array.isArray(parsed)) {
+            setItems(parsed);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to parse cart data', err);
+      } finally {
+        setIsInitialized(true);
       }
-    } catch (err) {
-      console.error('Failed to parse cart data', err);
-    } finally {
-      setIsInitialized(true);
-    }
+    };
+
+    loadCart();
   }, []);
 
   // Save cart to localStorage
@@ -89,6 +96,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
+
+  // Only render children after cart is initialized
+  if (!isInitialized) {
+    return null;
+  }
 
   return (
     <CartContext.Provider

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    animate="[object Object]"
+    initial="[object Object]"
+    transition="[object Object]"
+  >
+    <div
+      class="rounded-lg border bg-card text-card-foreground shadow-sm group overflow-hidden"
+    >
+      <a
+        href="/products/prod-1"
+      >
+        <div
+          class="relative aspect-square overflow-hidden"
+        >
+          <img
+            alt="Test Product"
+            class="object-cover transition-transform duration-300 group-hover:scale-110"
+            data-fill="true"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            src="/test-image.jpg"
+          />
+        </div>
+        <div
+          class="p-4"
+        >
+          <h3
+            class="text-lg font-semibold line-clamp-1"
+          >
+            Test Product
+          </h3>
+          <p
+            class="mt-2 text-2xl font-bold text-primary"
+          >
+            $29.99
+          </p>
+        </div>
+      </a>
+      <div
+        class="p-4 pt-0"
+      >
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full gap-2 transition-colors"
+        >
+          <svg
+            data-testid="shopping-cart-icon"
+          />
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

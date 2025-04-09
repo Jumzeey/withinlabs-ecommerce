@@ -14,7 +14,7 @@ export function Pagination({
 
     // Preserve all existing search params except page
     const createPageUrl = (page: number) => {
-        const params = new URLSearchParams(searchParams.toString());
+        const params = new URLSearchParams(searchParams?.toString() || '');
         params.set('page', page.toString());
         return `/?${params.toString()}`;
     };
@@ -26,7 +26,6 @@ export function Pagination({
 
     return (
         <div className="flex justify-center gap-2 mt-8">
-            <p>exacyly</p>
             {/* Previous Button */}
             {currentPage > 1 && (
                 <Link

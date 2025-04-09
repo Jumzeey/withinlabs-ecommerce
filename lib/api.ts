@@ -2,7 +2,7 @@
 const API_URL = "http://localhost:3001";
 
 export interface Product {
-  id: string;
+  id: string; // Enforced as string
   title: string;
   description: string;
   price: number;
@@ -18,6 +18,23 @@ export interface Product {
   }>;
 }
 
+/**
+ * Normalizes product data from API to ensure consistent types
+ */
+function normalizeProduct(product: any): Product {
+  return {
+    ...product,
+    id: String(product.id), // Force ID to string
+    reviews: (product.reviews || []).map((review: any) => ({
+      ...review,
+      id: String(review.id), // Force review IDs to strings
+    })),
+  };
+}
+
+/**
+ * Fetches products with pagination and filtering
+ */
 export async function fetchProducts(
   page: number = 1,
   limit: number = 12,
@@ -28,52 +45,79 @@ export async function fetchProducts(
     maxPrice?: number;
   }
 ): Promise<{ products: Product[]; totalPages: number }> {
-  let url = `${API_URL}/products?_page=${page}&_limit=${limit}`;
+  let baseUrl = `${API_URL}/products`;
+  const queryParams: string[] = [];
 
-  // the filters
+  // Apply filters
   if (filters?.category && filters.category !== "All") {
-    url += `&category=${filters.category}`;
+    queryParams.push(`category=${filters.category}`);
   }
   if (filters?.search) {
-    url += `&title_like=${filters.search}`;
+    queryParams.push(`title_like=${filters.search}`);
   }
   if (filters?.minPrice || filters?.maxPrice) {
-    url += `&price_gte=${filters.minPrice || 0}&price_lte=${
-      filters.maxPrice || 9999
-    }`;
+    queryParams.push(`price_gte=${filters.minPrice || 0}`);
+    queryParams.push(`price_lte=${filters.maxPrice || 9999}`);
   }
 
-  const response = await fetch(url);
+  // 1. Get total count
+  const countUrl =
+    queryParams.length > 0 ? `${baseUrl}?${queryParams.join("&")}` : baseUrl;
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch products");
-  }
+  const countResponse = await fetch(countUrl);
+  const allProducts = (await countResponse.json()).map(normalizeProduct);
+  const totalItems = allProducts.length;
+  const totalPages = Math.ceil(totalItems / limit);
 
-  const total = Number(response.headers.get("X-Total-Count") || "0");
-  const products = await response.json();
+  // 2. Get paginated results
+  queryParams.push(`_page=${page}`, `_limit=${limit}`);
+  const paginatedUrl = `${baseUrl}?${queryParams.join("&")}`;
+  const paginatedResponse = await fetch(paginatedUrl);
+  const products = (await paginatedResponse.json()).map(normalizeProduct);
 
-  return {
-    products,
-    totalPages: Math.ceil(total / limit),
-  };
+  return { products, totalPages };
 }
 
-export async function fetchProductById(id: string) {
+/**
+ * Fetches a single product by ID
+ */
+export async function fetchProductById(id: string): Promise<Product> {
   const response = await fetch(`${API_URL}/products/${id}`);
   if (!response.ok) throw new Error("Failed to fetch product");
-  return response.json();
+  return normalizeProduct(await response.json());
 }
 
-export async function searchProducts(query: string) {
+/**
+ * Searches products by query string
+ */
+export async function searchProducts(query: string): Promise<Product[]> {
   const response = await fetch(`${API_URL}/products?q=${query}`);
   if (!response.ok) throw new Error("Failed to search products");
-  return response.json();
+  const data = await response.json();
+  return Array.isArray(data) ? data.map(normalizeProduct) : [];
 }
 
-export async function fetchCartProducts(productIds: string[]): Promise<Product[]> {
+/**
+ * Fetches multiple products for cart display
+ */
+export async function fetchCartProducts(
+  productIds: string[]
+): Promise<Product[]> {
   if (productIds.length === 0) return [];
-  
-  const response = await fetch(`${API_URL}/products?id=${productIds.join('&id=')}`);
+
+  const response = await fetch(
+    `${API_URL}/products?id=${productIds.join("&id=")}`
+  );
+
   if (!response.ok) throw new Error("Failed to fetch cart products");
-  return response.json();
+
+  const data = await response.json();
+  return Array.isArray(data) ? data.map(normalizeProduct) : [];
+}
+
+/**
+ * Utility function to check if object is a Product
+ */
+export function isProduct(obj: any): obj is Product {
+  return obj && typeof obj.id !== "undefined";
 }

@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 export function ProductGrid({ products }: { products: Product[] }) {
   return (
     <motion.div
+      data-testid="product-grid"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

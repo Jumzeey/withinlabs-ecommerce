@@ -31,6 +31,7 @@ export default async function ProductPage({
 
   try {
     product = await fetchProductById(params.id);
+    console.log('Product data:', product);
   } catch (error) {
     console.error(`Error fetching product ${params.id}:`, error);
     notFound();
