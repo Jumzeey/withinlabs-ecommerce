@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="8" fill="#2563EB"/>
-  <path d="M8 8H24L22.4 20.4C22.2 21.8 21 22.8 19.6 22.8H12.4C11 22.8 9.8 21.8 9.6 20.4L8 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 8V6C12 4.9 12.9 4 14 4H18C19.1 4 20 4.9 20 6V8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 12V18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 15H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#2563EB"/>
+  <path d="M128 128H384L358.4 326.4C355.2 348.8 337.6 364.8 316.8 364.8H195.2C174.4 364.8 156.8 348.8 153.6 326.4L128 128Z" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M192 128V96C192 78.4 206.4 64 224 64H288C305.6 64 320 78.4 320 96V128" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M256 192V288" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M192 240H320" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
 </svg> 
