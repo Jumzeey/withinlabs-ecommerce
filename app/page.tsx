@@ -37,20 +37,24 @@ export default async function HomePage({
       filters
     );
 
+    console.log('Page component - Current page:', currentPage);
+    console.log('Page component - Total pages:', totalPages);
+    console.log('Page component - Products count:', products.length);
+
     return (
       <div className="py-8 px-4 md:px-8 lg:px-24 space-y-8">
         <ProductFilters initialValues={searchParams} />
 
-        <Suspense fallback={<ProductGridSkeleton />}>
+        <Suspense fallback={<ProductGrid isLoading={true} products={[]} />}>
           <ProductGrid products={products} />
-
-          {totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-            />
-          )}
         </Suspense>
+
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+          />
+        )}
       </div>
     );
 

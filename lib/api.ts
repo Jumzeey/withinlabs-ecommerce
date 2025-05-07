@@ -45,37 +45,68 @@ export async function fetchProducts(
     maxPrice?: number;
   }
 ): Promise<{ products: Product[]; totalPages: number }> {
-  let baseUrl = `${API_URL}/products`;
   const queryParams: string[] = [];
 
   // Apply filters
   if (filters?.category && filters.category !== "All") {
-    queryParams.push(`category=${filters.category}`);
+    queryParams.push(`category=${encodeURIComponent(filters.category)}`);
   }
   if (filters?.search) {
-    queryParams.push(`title_like=${filters.search}`);
+    queryParams.push(`title_like=${encodeURIComponent(filters.search)}`);
   }
-  if (filters?.minPrice || filters?.maxPrice) {
-    queryParams.push(`price_gte=${filters.minPrice || 0}`);
-    queryParams.push(`price_lte=${filters.maxPrice || 9999}`);
+  if (filters?.minPrice !== undefined) {
+    queryParams.push(`price_gte=${filters.minPrice}`);
+  }
+  if (filters?.maxPrice !== undefined) {
+    queryParams.push(`price_lte=${filters.maxPrice}`);
   }
 
-  // 1. Get total count
-  const countUrl =
-    queryParams.length > 0 ? `${baseUrl}?${queryParams.join("&")}` : baseUrl;
+  // Add pagination parameters
+  queryParams.push(`_page=${page}`);
+  queryParams.push(`_limit=${limit}`);
 
-  const countResponse = await fetch(countUrl);
-  const allProducts = (await countResponse.json()).map(normalizeProduct);
-  const totalItems = allProducts.length;
-  const totalPages = Math.ceil(totalItems / limit);
+  // Construct the URL
+  const url = `${API_URL}/products?${queryParams.join("&")}`;
 
-  // 2. Get paginated results
-  queryParams.push(`_page=${page}`, `_limit=${limit}`);
-  const paginatedUrl = `${baseUrl}?${queryParams.join("&")}`;
-  const paginatedResponse = await fetch(paginatedUrl);
-  const products = (await paginatedResponse.json()).map(normalizeProduct);
+  try {
+    // Fetch the paginated data with explicit headers
+    const response = await fetch(url, {
+      headers: {
+        Accept: "application/json",
+        "Cache-Control": "no-cache",
+      },
+    });
 
-  return { products, totalPages };
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch products: ${response.status} ${response.statusText}`
+      );
+    }
+
+    // Get total count from headers
+    const totalCountHeader = response.headers.get("X-Total-Count");
+    if (!totalCountHeader) {
+      console.warn("X-Total-Count header not found in response");
+      // Fallback: count the products in the current response
+      const products = (await response.json()).map(normalizeProduct);
+      return { products, totalPages: Math.ceil(products.length / limit) };
+    }
+
+    const totalCount = parseInt(totalCountHeader, 10);
+    if (isNaN(totalCount)) {
+      console.warn("Invalid X-Total-Count header value:", totalCountHeader);
+      const products = (await response.json()).map(normalizeProduct);
+      return { products, totalPages: Math.ceil(products.length / limit) };
+    }
+
+    const totalPages = Math.ceil(totalCount / limit);
+    const products = (await response.json()).map(normalizeProduct);
+
+    return { products, totalPages };
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
 }
 
 /**
@@ -91,7 +122,9 @@ export async function fetchProductById(id: string): Promise<Product> {
  * Searches products by query string
  */
 export async function searchProducts(query: string): Promise<Product[]> {
-  const response = await fetch(`${API_URL}/products?q=${query}`);
+  const response = await fetch(
+    `${API_URL}/products?q=${encodeURIComponent(query)}`
+  );
   if (!response.ok) throw new Error("Failed to search products");
   const data = await response.json();
   return Array.isArray(data) ? data.map(normalizeProduct) : [];

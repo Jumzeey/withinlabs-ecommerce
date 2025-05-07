@@ -12,6 +12,9 @@ export function Pagination({
 }) {
     const searchParams = useSearchParams();
 
+    console.log('Pagination component - Current page:', currentPage);
+    console.log('Pagination component - Total pages:', totalPages);
+
     // Preserve all existing search params except page
     const createPageUrl = (page: number) => {
         const params = new URLSearchParams(searchParams?.toString() || '');
@@ -21,6 +24,7 @@ export function Pagination({
 
     // Don't show pagination if there's only one page
     if (totalPages <= 1) {
+        console.log('Pagination not shown - only one page');
         return null;
     }
 
@@ -55,8 +59,8 @@ export function Pagination({
                         key={pageNum}
                         href={createPageUrl(pageNum)}
                         className={`px-4 py-2 rounded ${currentPage === pageNum
-                                ? "bg-blue-500 text-white"
-                                : "bg-gray-200 hover:bg-gray-300"
+                            ? "bg-blue-500 text-white"
+                            : "bg-gray-200 hover:bg-gray-300"
                             }`}
                     >
                         {pageNum}

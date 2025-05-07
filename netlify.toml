@@ -1,0 +1,15 @@
+[build]
+  command = "npm run netlify:build"
+  publish = ".next"  # For SSR/standalone mode
+  # OR for static export:
+  # publish = "out"
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:3001/:splat"
+  status = 200
+  force = true
