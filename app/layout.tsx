@@ -10,8 +10,35 @@ import { LoadingProvider } from './components/LoadingProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Modern Store - Next.js E-commerce',
-  description: 'A modern e-commerce store built with Next.js',
+  title: 'Withinlabs Store',
+  description: 'Your one-stop shop for premium products',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+      {
+        url: '/icon.png',
+        type: 'image/png',
+        sizes: '32x32',
+      },
+      {
+        url: '/apple-icon.png',
+        type: 'image/png',
+        sizes: '180x180',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-icon.png',
+        sizes: '180x180',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  themeColor: '#ffffff',
+  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({
