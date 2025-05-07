@@ -3,7 +3,7 @@
 import { useCart } from '../context/CartContext';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Minus, Plus, Trash2, X } from 'lucide-react'; // Added X icon
+import { Minus, Plus, Trash2, X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Product } from '@/lib/api';
@@ -91,50 +91,58 @@ export function CartDrawer() {
         <div className="space-y-4 py-4">
           {cartItems.map(({ product, quantity }) => (
             <div key={product.id} className="space-y-3">
-              <div className="flex items-center space-x-4">
-                <div className="relative h-16 w-16 overflow-hidden rounded">
+              <div className="flex items-center gap-4">
+                {/* Product Image Container */}
+                <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border bg-gray-100">
                   <Image
                     src={product.images[0]}
                     alt={product.title}
                     fill
                     className="object-cover"
-                    sizes="64px"
+                    sizes="80px"
+                    priority
                   />
                 </div>
-                <div className="flex-1 space-y-1">
-                  <h4 className="font-medium leading-none">{product.title}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    ${product.price.toFixed(2)}
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-8 w-8"
-                    onClick={() => updateQuantity(product.id, Math.max(1, quantity - 1))}
-                    disabled={quantity <= 1}
-                  >
-                    <Minus className="h-4 w-4" />
-                  </Button>
-                  <span className="w-8 text-center">{quantity}</span>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-8 w-8"
-                    onClick={() => updateQuantity(product.id, quantity + 1)}
-                  >
-                    <Plus className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    aria-label="Remove item"
-                    variant="outline"
-                    size="icon"
-                    className="h-8 w-8 text-red-500"
-                    onClick={() => removeFromCart(product.id)}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
+
+                {/* Product Details */}
+                <div className="flex flex-1 flex-col justify-between gap-1">
+                  <div>
+                    <h4 className="text-sm font-medium leading-none line-clamp-1">{product.title}</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      ${product.price.toFixed(2)}
+                    </p>
+                  </div>
+
+                  {/* Quantity Controls */}
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="h-8 w-8"
+                      onClick={() => updateQuantity(product.id, Math.max(1, quantity - 1))}
+                      disabled={quantity <= 1}
+                    >
+                      <Minus className="h-4 w-4" />
+                    </Button>
+                    <span className="w-8 text-center text-sm">{quantity}</span>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="h-8 w-8"
+                      onClick={() => updateQuantity(product.id, quantity + 1)}
+                    >
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      aria-label="Remove item"
+                      variant="outline"
+                      size="icon"
+                      className="h-8 w-8 text-red-500"
+                      onClick={() => removeFromCart(product.id)}
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
               <Separator />
@@ -142,6 +150,8 @@ export function CartDrawer() {
           ))}
         </div>
       </ScrollArea>
+
+      {/* Cart Summary */}
       <div className="p-6 space-y-4 border-t">
         <div className="flex items-center justify-between font-semibold">
           <span>Total</span>
